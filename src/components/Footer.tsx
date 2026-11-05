@@ -9,6 +9,7 @@ import {
   Phone,
   MapPin,
   CalendarCheck,
+  Sparkles,
 } from "lucide-react";
 import { SITE_METADATA, FOOTER_LINKS } from "@/data/siteData";
 
@@ -18,17 +19,18 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-slate-50 border-t border-sky-100 text-slate-600 text-sm overflow-hidden">
-      {/* Subtle background ambient sky glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none" />
+    <footer className="relative bg-gradient-to-b from-[#0b1329] via-[#080e1d] to-[#040710] border-t border-sky-500/20 text-slate-300 text-sm overflow-hidden">
+      {/* Background ambient cyan & sky glows */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[350px] bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-sky-200/80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
           {/* Brand Info (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border border-sky-200 p-1 flex items-center justify-center shadow-xs">
+              <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-900 border border-sky-400/40 p-1 flex items-center justify-center shadow-lg shadow-sky-950/50">
                 <Image
                   src={SITE_METADATA.logoUrl}
                   alt={SITE_METADATA.agencyName}
@@ -38,22 +40,24 @@ export default function Footer() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-lg text-slate-900 tracking-tight">
+                <span className="font-black text-lg text-white tracking-tight flex items-center gap-1.5">
                   {SITE_METADATA.agencyName}
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 </span>
-                <span className="text-[10px] tracking-wider uppercase text-sky-700 font-bold">
+                <span className="text-[10px] tracking-wider uppercase text-cyan-300 font-bold">
                   Health &amp; Wellness Marketing
                 </span>
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
               Team With Someone is a digital marketing agency for health and wellness, helping doctors, dietitians, and nutritionists grow their online presence with targeted Meta Ads, Google Ads, SEO, and performance funnels.
             </p>
 
             {/* Social Icons (Instagram, LinkedIn, Facebook - Real SVG Icons attached to URLs) */}
             <div className="pt-2">
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-3">
+              <div className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                 Follow Our Healthcare Insights
               </div>
               <div className="flex items-center gap-3">
@@ -63,7 +67,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Team With Someone on Instagram"
-                  className="w-10 h-10 rounded-xl bg-white border border-sky-200 flex items-center justify-center text-slate-700 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 hover:border-transparent transition-all shadow-xs group"
+                  className="w-10 h-10 rounded-xl bg-slate-900/90 border border-sky-500/30 flex items-center justify-center text-slate-300 hover:text-white hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 hover:border-transparent transition-all shadow-md group"
                 >
                   <svg
                     className="w-4 h-4 fill-current transition-transform group-hover:scale-110"
@@ -79,7 +83,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Connect with Team With Someone on LinkedIn"
-                  className="w-10 h-10 rounded-xl bg-white border border-sky-200 flex items-center justify-center text-slate-700 hover:text-white hover:bg-[#0077b5] hover:border-transparent transition-all shadow-xs group"
+                  className="w-10 h-10 rounded-xl bg-slate-900/90 border border-sky-500/30 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#0077b5] hover:border-transparent transition-all shadow-md group"
                 >
                   <svg
                     className="w-4 h-4 fill-current transition-transform group-hover:scale-110"
@@ -95,7 +99,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow Team With Someone on Facebook"
-                  className="w-10 h-10 rounded-xl bg-white border border-sky-200 flex items-center justify-center text-slate-700 hover:text-white hover:bg-[#1877f2] hover:border-transparent transition-all shadow-xs group"
+                  className="w-10 h-10 rounded-xl bg-slate-900/90 border border-sky-500/30 flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#1877f2] hover:border-transparent transition-all shadow-md group"
                 >
                   <svg
                     className="w-4 h-4 fill-current transition-transform group-hover:scale-110"
@@ -110,7 +114,7 @@ export default function Footer() {
 
           {/* Core Services (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="text-xs font-bold uppercase tracking-wider text-white">
               Core Services
             </div>
             <ul className="space-y-2">
@@ -118,7 +122,7 @@ export default function Footer() {
                 <li key={service.name}>
                   <Link
                     href={service.href}
-                    className="text-slate-600 hover:text-sky-600 transition-colors text-xs sm:text-sm block py-0.5"
+                    className="text-slate-400 hover:text-cyan-300 transition-colors text-xs sm:text-sm block py-0.5"
                   >
                     {service.name}
                   </Link>
@@ -129,7 +133,7 @@ export default function Footer() {
 
           {/* Navigation & Legal Pages (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="text-xs font-bold uppercase tracking-wider text-white">
               Navigation &amp; Policies
             </div>
             <ul className="space-y-2">
@@ -137,7 +141,7 @@ export default function Footer() {
                 <li key={nav.name}>
                   <Link
                     href={nav.href}
-                    className="text-slate-600 hover:text-sky-600 transition-colors text-xs sm:text-sm block py-0.5"
+                    className="text-slate-400 hover:text-cyan-300 transition-colors text-xs sm:text-sm block py-0.5"
                   >
                     {nav.name}
                   </Link>
@@ -148,23 +152,23 @@ export default function Footer() {
 
           {/* Contact Details (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <div className="text-xs font-bold uppercase tracking-wider text-slate-900">
+            <div className="text-xs font-bold uppercase tracking-wider text-white">
               Direct Contact
             </div>
-            <div className="space-y-2.5 text-xs text-slate-600">
+            <div className="space-y-2.5 text-xs text-slate-400">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                 <span>DLF Cyber City, Sector 24, Gurugram, India</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-sky-600 transition-colors">
+                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <a href="tel:+919876543210" className="hover:text-cyan-300 transition-colors">
                   {SITE_METADATA.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-blue-600 shrink-0" />
-                <a href={`mailto:${SITE_METADATA.email}`} className="hover:text-sky-600 transition-colors">
+                <Mail className="w-4 h-4 text-sky-400 shrink-0" />
+                <a href={`mailto:${SITE_METADATA.email}`} className="hover:text-cyan-300 transition-colors">
                   {SITE_METADATA.email}
                 </a>
               </div>
@@ -175,9 +179,9 @@ export default function Footer() {
                 href={SITE_METADATA.bookingCalendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-600 hover:text-sky-700"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-300 hover:text-white transition-colors"
               >
-                <CalendarCheck className="w-3.5 h-3.5" />
+                <CalendarCheck className="w-3.5 h-3.5 text-cyan-400" />
                 Book 1-on-1 Strategy Call
               </a>
             </div>
@@ -185,29 +189,29 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar with Copyright & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
             &copy; {new Date().getFullYear()} {SITE_METADATA.agencyName} (TWS). All rights reserved. Specialized Healthcare Performance Agency.
           </div>
 
           <div className="flex items-center gap-6">
-            <Link href="/privacy-policy" className="hover:text-sky-600 transition-colors">
+            <Link href="/privacy-policy" className="hover:text-cyan-300 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-sky-600 transition-colors">
+            <Link href="/terms-and-conditions" className="hover:text-cyan-300 transition-colors">
               Terms
             </Link>
-            <Link href="/refund-and-cancellation-policy" className="hover:text-sky-600 transition-colors">
+            <Link href="/refund-and-cancellation-policy" className="hover:text-cyan-300 transition-colors">
               Refunds
             </Link>
-            <Link href="/disclaimer" className="hover:text-sky-600 transition-colors">
+            <Link href="/disclaimer" className="hover:text-cyan-300 transition-colors">
               Disclaimer
             </Link>
 
             <button
               type="button"
               onClick={scrollToTop}
-              className="p-2 rounded-xl bg-white hover:bg-sky-50 border border-sky-200 text-slate-700 hover:text-sky-600 transition-colors flex items-center gap-1.5 shadow-xs"
+              className="p-2 rounded-xl bg-slate-900 hover:bg-sky-600 border border-slate-800 hover:border-sky-400 text-slate-300 hover:text-white transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />

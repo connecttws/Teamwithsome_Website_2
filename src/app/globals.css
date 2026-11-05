@@ -1,20 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* Premium Light Theme: Sky Blue with White */
+  /* Rich Shaded Agency Theme: Blue Shades + Black Shade + Crisp White */
   --bg-primary: #ffffff;
-  --bg-secondary: #f0f9ff;
-  --bg-tertiary: #e0f2fe;
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-card-hover: #ffffff;
-  --border-subtle: rgba(224, 242, 254, 0.95);
-  --border-accent: rgba(14, 165, 233, 0.35);
+  --bg-secondary: #f0f7ff;
+  --bg-tertiary: #e0effe;
+  --bg-dark-accent: #0b1329;
+  --bg-dark-deep: #070c18;
 
   --accent-sky: #0ea5e9;
   --accent-sky-dark: #0284c7;
   --accent-sky-light: #38bdf8;
-  --accent-sky-glow: rgba(14, 165, 233, 0.18);
-  --accent-indigo: #6366f1;
+  --accent-blue-deep: #1e40af;
   --accent-emerald: #10b981;
 
   --text-main: #0f172a;
@@ -29,7 +26,7 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f8fafc;
   color: #0f172a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
@@ -37,59 +34,136 @@ body {
   selection-color: #ffffff;
 }
 
-/* Subtle Sky Grid Pattern on White */
+/* Subtle Sky Grid Pattern on Shaded Background */
 .bg-sky-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(14, 165, 233, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(14, 165, 233, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
 }
 
-.bg-agency-dots-light {
-  background-image: radial-gradient(rgba(14, 165, 233, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
+.bg-dark-grid-pattern {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
 }
 
-/* Glassmorphism Surface for White / Sky Blue */
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(224, 242, 254, 0.95);
-  box-shadow: 0 4px 20px -2px rgba(14, 165, 233, 0.06);
+/* Moving Border Animations */
+@keyframes spin-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.glass-panel-light-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.animate-spin-beam {
+  animation: spin-beam 4s linear infinite;
 }
 
-.glass-panel-light-hover:hover {
-  background: #ffffff;
-  border-color: rgba(56, 189, 248, 0.5);
-  box-shadow: 0 16px 36px -8px rgba(14, 165, 233, 0.14);
-  transform: translateY(-3px);
+/* Moving Border Beam on Cards */
+.moving-border-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 1.5px;
 }
 
-/* Black Shine Border Cards (Sleek Gloss Finish on White) */
+.moving-border-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    #0ea5e9 55deg,
+    #38bdf8 90deg,
+    transparent 150deg,
+    #10b981 210deg,
+    #0284c7 270deg,
+    transparent 360deg
+  );
+  animation: spin-beam 4.5s linear infinite;
+  z-index: 1;
+}
+
+.moving-border-inner {
+  position: relative;
+  z-index: 2;
+  border-radius: calc(1.5rem - 1.5px);
+}
+
+/* Flowing Linear Border Gradient */
+@keyframes moving-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-moving-line {
+  background-size: 200% 200%;
+  background-image: linear-gradient(
+    90deg,
+    #0284c7 0%,
+    #38bdf8 25%,
+    #0ea5e9 50%,
+    #0f172a 75%,
+    #0284c7 100%
+  );
+  animation: moving-gradient 5s ease infinite;
+}
+
+/* Black Shine Border Card (from Teamwithsome_Website) with Shaded Blue Gradient Interior */
 .card-black-shine {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: linear-gradient(165deg, #ffffff 0%, #f0f7ff 60%, #e2effe 100%);
+  border: 1px solid rgba(15, 23, 42, 0.16);
   box-shadow: 
-    0 1px 3px 0 rgba(0, 0, 0, 0.03),
-    0 4px 18px -2px rgba(14, 165, 233, 0.06),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04),
+    0 4px 20px -2px rgba(14, 165, 233, 0.1),
+    0 0 0 1px rgba(15, 23, 42, 0.05),
     inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-black-shine:hover {
-  border-color: rgba(14, 165, 233, 0.45);
+  border-color: rgba(14, 165, 233, 0.55);
   box-shadow: 
-    0 14px 34px -4px rgba(14, 165, 233, 0.16),
-    0 0 0 1px rgba(14, 165, 233, 0.25);
+    0 16px 36px -4px rgba(14, 165, 233, 0.2),
+    0 0 0 1.5px rgba(14, 165, 233, 0.35),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
   transform: translateY(-3px);
 }
 
-/* Conic Spin Border Wrapper (for Light Theme) */
+/* Dark Shaded Card with Blue Glow */
+.card-dark-shade {
+  background: linear-gradient(145deg, #0f1a36 0%, #080d1e 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 
+    0 10px 30px -5px rgba(2, 132, 199, 0.2),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-dark-shade:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 
+    0 20px 44px -8px rgba(14, 165, 233, 0.35),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Conic Spin Border Wrapper */
 @keyframes spin-slow {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -99,44 +173,25 @@ body {
   }
 }
 
-.animate-spin-slow {
-  animation: spin-slow 4s linear infinite;
-}
-
-.spin-conic-border-light {
+.spin-conic-border-blue {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 250%;
   height: 250%;
-  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, #0ea5e9 45%, #10b981 55%, transparent 100%);
+  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, #0ea5e9 45%, #0284c7 55%, transparent 100%);
   animation: spin-slow 4s linear infinite;
 }
 
-/* Ambient Radial Glow Gradients for White Theme */
-.radial-glow-sky-subtle {
-  background: radial-gradient(circle at 50% 50%, rgba(186, 230, 253, 0.4) 0%, rgba(224, 242, 254, 0.15) 50%, rgba(255, 255, 255, 0) 75%);
-}
-
-.radial-glow-emerald-subtle {
-  background: radial-gradient(circle at 50% 50%, rgba(167, 243, 208, 0.35) 0%, rgba(209, 250, 229, 0.1) 50%, rgba(255, 255, 255, 0) 75%);
-}
-
-/* Gradient Text Utilities in Sky Blue */
+/* Gradient Text Utilities */
 .text-gradient-sky {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 55%, #38bdf8 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-sky-dark {
-  background: linear-gradient(135deg, #0f172a 20%, #0369a1 70%, #0ea5e9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-sky-emerald {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #059669 100%);
+.text-gradient-blue-dark {
+  background: linear-gradient(135deg, #0f172a 15%, #0284c7 65%, #0ea5e9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -147,14 +202,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bae6fd;
+  background: #7dd3fc;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0ea5e9;
+  background: #0284c7;
 }
