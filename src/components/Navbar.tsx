@@ -92,8 +92,8 @@ export default function Navbar({ onOpenBookingModal }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-sky-100 shadow-sm shadow-sky-950/5 py-3"
-            : "bg-white/70 backdrop-blur-md py-4 sm:py-5 border-b border-sky-50"
+            ? "bg-white/95 backdrop-blur-xl border-b border-sky-200 shadow-sm shadow-sky-950/5 py-3"
+            : "bg-[#cce5fc]/70 backdrop-blur-md py-4 sm:py-5 border-b border-sky-300/50"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
