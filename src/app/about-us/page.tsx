@@ -43,17 +43,21 @@ export default function AboutUsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#eaf2fb] via-[#e4eef9] to-[#edf5fc] text-slate-900 flex flex-col">
+    <main className="min-h-screen bg-gradient-to-b from-[#dbeafe] via-[#e8f2fc] to-[#f0f7ff] text-slate-900 flex flex-col">
       <Navbar onOpenBookingModal={() => setIsBookingModalOpen(true)} />
 
       {/* Header */}
-      <section className="relative pt-36 pb-20 bg-gradient-to-b from-[#eaf2fb] via-[#e2eefb] to-[#edf5fc] overflow-hidden border-b border-sky-200/80">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] bg-sky-300/25 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.04] pointer-events-none" />
+      <section className="relative pt-36 pb-20 bg-gradient-to-b from-[#dbeafe] via-[#e8f2fc] to-[#f0f7ff] overflow-hidden border-b border-sky-200/80">
+        {/* Top Ambient Shade: Sky Blue, Warm Yellow, and Soft Orange Only */}
+        <div className="absolute top-0 left-0 right-0 h-64 overflow-hidden pointer-events-none z-0">
+          <div className="absolute -top-20 left-[10%] w-[380px] h-[240px] bg-sky-400/20 rounded-full blur-3xl" />
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[340px] h-[220px] bg-amber-300/20 rounded-full blur-3xl" />
+          <div className="absolute -top-16 right-[10%] w-[360px] h-[240px] bg-orange-400/15 rounded-full blur-3xl" />
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-sky-500/40 text-sky-300 text-xs font-bold tracking-wider uppercase mb-4 shadow-md shadow-sky-950/20">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-sky-500/40 text-sky-300 text-xs font-bold tracking-wider uppercase mb-4 shadow-md shadow-sky-950/15">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             Our Mission &amp; Story
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6">
@@ -86,7 +90,7 @@ export default function AboutUsPage() {
                     e.preventDefault();
                     setIsBookingModalOpen(true);
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 text-white font-bold text-sm shadow-xl shadow-sky-500/25 hover:from-sky-400 hover:to-blue-500 transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 hover:from-orange-500 hover:via-amber-500 hover:to-orange-600 text-white font-bold text-sm shadow-xl shadow-sky-500/25 transition-all cursor-pointer"
                 >
                   <CalendarCheck className="w-4 h-4" />
                   Schedule a Strategy Call
@@ -96,7 +100,7 @@ export default function AboutUsPage() {
 
             <div className="lg:col-span-5 relative">
               <div className="moving-border-card rounded-3xl p-[2px] shadow-2xl">
-                <div className="rounded-[22px] overflow-hidden bg-slate-950">
+                <div className="rounded-[22px] overflow-hidden bg-white border border-sky-300">
                   <Image
                     src="/philosophy.webp"
                     alt="Team With Someone Agency Philosophy"
@@ -111,8 +115,8 @@ export default function AboutUsPage() {
 
           {/* Key Agency Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-white via-[#f4f8fe] to-[#e6f0fa] border-2 border-sky-200/80 shadow-md">
-              <div className="p-3 rounded-2xl bg-slate-900 text-cyan-400 w-fit mb-4 shadow-md">
+            <div className="p-8 rounded-3xl card-beautiful">
+              <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-sky-600 w-fit mb-4 shadow-xs">
                 <ShieldCheck className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Medical Ethics &amp; Ad Compliance</h3>
@@ -121,8 +125,8 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-white via-[#f4f8fe] to-[#e6f0fa] border-2 border-sky-200/80 shadow-md">
-              <div className="p-3 rounded-2xl bg-slate-900 text-emerald-400 w-fit mb-4 shadow-md">
+            <div className="p-8 rounded-3xl card-beautiful">
+              <div className="p-3.5 rounded-2xl bg-orange-50 border border-orange-200 text-orange-600 w-fit mb-4 shadow-xs">
                 <Target className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Intent-Driven Patient Lead Quality</h3>
@@ -131,8 +135,8 @@ export default function AboutUsPage() {
               </p>
             </div>
 
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-white via-[#f4f8fe] to-[#e6f0fa] border-2 border-sky-200/80 shadow-md">
-              <div className="p-3 rounded-2xl bg-slate-900 text-blue-400 w-fit mb-4 shadow-md">
+            <div className="p-8 rounded-3xl card-beautiful">
+              <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 w-fit mb-4 shadow-xs">
                 <Users className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-black text-slate-900 mb-2">Sales &amp; Closing Mentorship</h3>
@@ -157,9 +161,9 @@ export default function AboutUsPage() {
               {team.map((member) => (
                 <div
                   key={member.name}
-                  className="rounded-3xl bg-gradient-to-br from-white via-[#f4f8fe] to-[#e6f0fa] border-2 border-sky-200/80 p-6 text-center group hover:border-sky-500 hover:shadow-xl transition-all shadow-sm"
+                  className="rounded-3xl card-beautiful p-6 text-center group hover:shadow-xl transition-all"
                 >
-                  <div className="relative w-24 h-24 mx-auto rounded-2xl overflow-hidden bg-slate-900 border-2 border-sky-400/60 mb-4 shadow-md">
+                  <div className="relative w-24 h-24 mx-auto rounded-2xl overflow-hidden bg-sky-50 border-2 border-sky-300 mb-4 shadow-sm">
                     {member.image ? (
                       <Image
                         src={member.image}
@@ -168,7 +172,7 @@ export default function AboutUsPage() {
                         className="object-cover"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-tr from-sky-600 to-blue-700 text-white font-black text-2xl">
+                      <div className="w-full h-full flex items-center justify-center bg-sky-100 text-sky-800 font-black text-2xl">
                         {member.name[0]}
                       </div>
                     )}

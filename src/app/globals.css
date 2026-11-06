@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Rich Shaded Agency Theme: Blue Shades + Black Shade + Crisp White */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f0f7ff;
-  --bg-tertiary: #e0effe;
-  --bg-dark-accent: #0b1329;
-  --bg-dark-deep: #070c18;
+  /* FAQ Reference Base: Soft Sky Blue Gradient (#dbeafe to #f0f7ff) */
+  --bg-section-from: #dbeafe;
+  --bg-section-via: #e8f2fc;
+  --bg-section-to: #f0f7ff;
 
+  /* Only Orange, Yellow, Sky Blue Accents */
   --accent-sky: #0ea5e9;
   --accent-sky-dark: #0284c7;
   --accent-sky-light: #38bdf8;
-  --accent-blue-deep: #1e40af;
-  --accent-emerald: #10b981;
+  --accent-yellow: #f59e0b;
+  --accent-yellow-light: #fbbf24;
+  --accent-orange: #f97316;
+  --accent-orange-light: #fb923c;
 
   --text-main: #0f172a;
   --text-secondary: #334155;
@@ -26,7 +27,7 @@ html {
 }
 
 body {
-  background-color: #f8fafc;
+  background-color: #e8f2fc;
   color: #0f172a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
@@ -36,17 +37,10 @@ body {
 
 /* Subtle Sky Grid Pattern on Shaded Background */
 .bg-sky-grid-pattern {
-  background-size: 40px 40px;
+  background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(14, 165, 233, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(14, 165, 233, 0.08) 1px, transparent 1px);
-}
-
-.bg-dark-grid-pattern {
-  background-size: 44px 44px;
-  background-image: 
-    linear-gradient(to right, rgba(56, 189, 248, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(56, 189, 248, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(14, 165, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.07) 1px, transparent 1px);
 }
 
 /* Moving Border Animations */
@@ -63,7 +57,7 @@ body {
   animation: spin-beam 4s linear infinite;
 }
 
-/* Moving Border Beam on Cards */
+/* Moving Border Beam on Cards - Orange, Yellow, Sky Blue Only */
 .moving-border-card {
   position: relative;
   overflow: hidden;
@@ -81,11 +75,12 @@ body {
   background: conic-gradient(
     from 0deg at 50% 50%,
     transparent 0deg,
-    #0ea5e9 55deg,
-    #38bdf8 90deg,
-    transparent 150deg,
-    #10b981 210deg,
-    #0284c7 270deg,
+    #0ea5e9 45deg,
+    #38bdf8 80deg,
+    transparent 130deg,
+    #f59e0b 180deg,
+    #f97316 230deg,
+    #0284c7 280deg,
     transparent 360deg
   );
   animation: spin-beam 4.5s linear infinite;
@@ -98,72 +93,7 @@ body {
   border-radius: calc(1.5rem - 1.5px);
 }
 
-/* Flowing Linear Border Gradient */
-@keyframes moving-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.border-moving-line {
-  background-size: 200% 200%;
-  background-image: linear-gradient(
-    90deg,
-    #0284c7 0%,
-    #38bdf8 25%,
-    #0ea5e9 50%,
-    #0f172a 75%,
-    #0284c7 100%
-  );
-  animation: moving-gradient 5s ease infinite;
-}
-
-/* Black Shine Border Card (from Teamwithsome_Website) with Shaded Blue Gradient Interior */
-.card-black-shine {
-  background: linear-gradient(165deg, #ffffff 0%, #f0f7ff 60%, #e2effe 100%);
-  border: 1px solid rgba(15, 23, 42, 0.16);
-  box-shadow: 
-    0 1px 3px 0 rgba(0, 0, 0, 0.04),
-    0 4px 20px -2px rgba(14, 165, 233, 0.1),
-    0 0 0 1px rgba(15, 23, 42, 0.05),
-    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-black-shine:hover {
-  border-color: rgba(14, 165, 233, 0.55);
-  box-shadow: 
-    0 16px 36px -4px rgba(14, 165, 233, 0.2),
-    0 0 0 1.5px rgba(14, 165, 233, 0.35),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
-  transform: translateY(-3px);
-}
-
-/* Dark Shaded Card with Blue Glow */
-.card-dark-shade {
-  background: linear-gradient(145deg, #0f1a36 0%, #080d1e 100%);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: 
-    0 10px 30px -5px rgba(2, 132, 199, 0.2),
-    inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-dark-shade:hover {
-  border-color: rgba(56, 189, 248, 0.5);
-  box-shadow: 
-    0 20px 44px -8px rgba(14, 165, 233, 0.35),
-    inset 0 1px 2px 0 rgba(255, 255, 255, 0.18);
-  transform: translateY(-3px);
-}
-
-/* Conic Spin Border Wrapper */
+/* Conic Spin Border Wrapper - Orange, Yellow, Sky Blue Only */
 @keyframes spin-slow {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -179,30 +109,81 @@ body {
   left: 50%;
   width: 250%;
   height: 250%;
-  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, #0ea5e9 45%, #0284c7 55%, transparent 100%);
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    transparent 0%,
+    #0ea5e9 30%,
+    #f59e0b 50%,
+    #f97316 70%,
+    #0284c7 90%,
+    transparent 100%
+  );
   animation: spin-slow 4s linear infinite;
+}
+
+/* Beautiful Cards with High-Definition Glow & Subtle Depth */
+.card-beautiful {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 247, 255, 0.88) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 4px 20px -2px rgba(14, 165, 233, 0.08),
+    0 1px 3px 0 rgba(15, 23, 42, 0.04),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-beautiful:hover {
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 
+    0 16px 36px -6px rgba(14, 165, 233, 0.16),
+    0 0 0 1px rgba(249, 115, 22, 0.15),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-3px);
+}
+
+/* Black Shine Border Card with Shaded Light Blue Interior */
+.card-black-shine {
+  background: linear-gradient(165deg, #ffffff 0%, #f4f8fe 60%, #e8f2fc 100%);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.04),
+    0 4px 20px -2px rgba(14, 165, 233, 0.08),
+    0 0 0 1px rgba(15, 23, 42, 0.04),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-black-shine:hover {
+  border-color: rgba(14, 165, 233, 0.45);
+  box-shadow: 
+    0 16px 36px -4px rgba(14, 165, 233, 0.18),
+    0 0 0 1.5px rgba(249, 115, 22, 0.25),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-3px);
 }
 
 /* Gradient Text Utilities */
 .text-gradient-sky {
-  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-blue-dark {
-  background: linear-gradient(135deg, #0f172a 15%, #0284c7 65%, #0ea5e9 100%);
+  background: linear-gradient(135deg, #0f172a 20%, #0284c7 70%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Smooth custom scrollbar in Sky Blue */
+/* Custom Scrollbar in Sky Blue */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #e8f2fc;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -211,5 +192,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+  background: #0ea5e9;
 }

@@ -27,7 +27,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#070c18] text-slate-900 flex flex-col">
+    <main className="min-h-screen bg-gradient-to-b from-[#dbeafe] via-[#e8f2fc] to-[#f0f7ff] text-slate-900 flex flex-col">
       {/* Top Navbar */}
       <Navbar onOpenBookingModal={handleOpenBooking} />
 

@@ -30,70 +30,73 @@ export default function MetaAdsDeepDiveSection({
   onOpenBookingModal,
 }: MetaAdsDeepDiveSectionProps) {
   return (
-    <section id="meta-ads" className="relative py-24 bg-gradient-to-b from-[#080d1e] via-[#0f1d3d] to-[#eaf2fb] overflow-hidden text-slate-900">
-      {/* Background Glows */}
-      <div className="absolute top-1/2 left-0 w-[550px] h-[550px] bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-[550px] h-[550px] bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+    <section id="meta-ads" className="relative py-24 bg-gradient-to-b from-[#dbeafe] via-[#e8f2fc] to-[#f0f7ff] border-t border-sky-200/80 overflow-hidden text-slate-900">
+      {/* Top Ambient Shade: Sky Blue, Warm Yellow, and Soft Orange Only */}
+      <div className="absolute top-0 left-0 right-0 h-64 overflow-hidden pointer-events-none z-0">
+        <div className="absolute -top-20 left-[10%] w-[380px] h-[240px] bg-sky-400/20 rounded-full blur-3xl" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[340px] h-[220px] bg-amber-300/20 rounded-full blur-3xl" />
+        <div className="absolute -top-16 right-[10%] w-[360px] h-[240px] bg-orange-400/15 rounded-full blur-3xl" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-950/90 border border-sky-400 text-sky-300 text-xs font-bold tracking-wider uppercase mb-4 shadow-md shadow-sky-950/30">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-sky-500/40 text-sky-300 text-xs font-bold tracking-wider uppercase mb-4 shadow-md shadow-sky-950/15">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             Performance Meta Advertising
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-5 leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-5 leading-tight">
             {META_ADS_SECTION.h2}
           </h2>
-          <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal mb-3">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium mb-3">
             {META_ADS_SECTION.introParagraph1}
           </p>
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
             {META_ADS_SECTION.introParagraph2}
           </p>
         </div>
 
-        {/* Visual Funnel Representation with Moving Border Beam */}
-        <div className="mb-20 moving-border-card shadow-2xl shadow-sky-950/40">
-          <div className="moving-border-inner bg-gradient-to-br from-[#0c152e] via-[#0a1124] to-[#060a17] p-6 sm:p-10 border border-sky-500/30">
+        {/* Visual Funnel Representation with Moving Border Beam & Beautiful Card */}
+        <div className="mb-20 moving-border-card shadow-2xl shadow-sky-950/10">
+          <div className="moving-border-inner card-beautiful p-6 sm:p-10">
             <div className="text-center mb-8">
-              <span className="text-xs font-bold uppercase tracking-wider text-sky-400 bg-sky-950/80 px-3 py-1 rounded-full border border-sky-800">
+              <span className="text-xs font-bold uppercase tracking-wider text-sky-800 bg-sky-100 px-3.5 py-1.5 rounded-full border border-sky-300">
                 The TWS Healthcare Conversion Architecture
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mt-2">
-                How We Turn Cold Social Users into Booked Appointments
+              <h3 className="text-xl sm:text-2xl font-black text-slate-900 mt-3">
+                How We Turn Social Engagement into Verified Enquiries
               </h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-              <div className="rounded-2xl bg-slate-900/80 border border-sky-500/20 p-5 text-center relative group hover:border-sky-400 transition-colors shadow-lg">
-                <div className="text-xs font-mono font-bold text-sky-400 mb-1">STAGE 01</div>
-                <div className="text-base font-bold text-white mb-2">Targeted Healthcare Audience</div>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
+              <div className="rounded-2xl bg-white/90 border-2 border-sky-200/90 p-5 text-center relative group hover:border-sky-400 transition-all shadow-sm">
+                <div className="text-xs font-mono font-bold text-sky-700 mb-1">STAGE 01</div>
+                <div className="text-base font-bold text-slate-900 mb-2">Targeted Healthcare Audience</div>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   Hyper-filtered demographics, geographic proximity to your clinic, &amp; medical symptom intent.
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-slate-900/80 border border-sky-500/20 p-5 text-center relative group hover:border-sky-400 transition-colors shadow-lg">
-                <div className="text-xs font-mono font-bold text-blue-400 mb-1">STAGE 02</div>
-                <div className="text-base font-bold text-white mb-2">High-Authority Medical Ad</div>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
+              <div className="rounded-2xl bg-white/90 border-2 border-sky-200/90 p-5 text-center relative group hover:border-amber-400 transition-all shadow-sm">
+                <div className="text-xs font-mono font-bold text-amber-600 mb-1">STAGE 02</div>
+                <div className="text-base font-bold text-slate-900 mb-2">High-Authority Medical Ad</div>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   Educational doctor reel, verified patient case study, or problem-solving carousel.
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-slate-900/80 border border-sky-500/20 p-5 text-center relative group hover:border-sky-400 transition-colors shadow-lg">
-                <div className="text-xs font-mono font-bold text-indigo-400 mb-1">STAGE 03</div>
-                <div className="text-base font-bold text-white mb-2">Anti-Junk Qualification Form</div>
-                <p className="text-xs text-slate-300 leading-relaxed font-normal">
+              <div className="rounded-2xl bg-white/90 border-2 border-sky-200/90 p-5 text-center relative group hover:border-orange-400 transition-all shadow-sm">
+                <div className="text-xs font-mono font-bold text-orange-600 mb-1">STAGE 03</div>
+                <div className="text-base font-bold text-slate-900 mb-2">Anti-Junk Qualification Form</div>
+                <p className="text-xs text-slate-600 leading-relaxed font-normal">
                   Filters out casual browsers, collecting condition details, treatment budget &amp; timeline.
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-gradient-to-br from-emerald-950/90 to-slate-900 border border-emerald-500/50 p-5 text-center relative group shadow-xl shadow-emerald-950/40">
-                <div className="text-xs font-mono font-bold text-emerald-400 mb-1">STAGE 04</div>
-                <div className="text-base font-bold text-white mb-2">Verified Patient Appointment</div>
-                <p className="text-xs text-slate-200 leading-relaxed font-medium">
+              <div className="rounded-2xl bg-gradient-to-br from-white via-sky-50 to-orange-50/50 border-2 border-orange-300 p-5 text-center relative group shadow-md">
+                <div className="text-xs font-mono font-bold text-orange-600 mb-1">STAGE 04</div>
+                <div className="text-base font-bold text-slate-900 mb-2">Verified Patient Appointment</div>
+                <p className="text-xs text-slate-700 leading-relaxed font-medium">
                   Instant WhatsApp confirmation &amp; direct calendar synchronization for your clinic team.
                 </p>
               </div>
@@ -101,9 +104,9 @@ export default function MetaAdsDeepDiveSection({
           </div>
         </div>
 
-        {/* 6 What We Do Cards with Shaded Blue & Black Contrast */}
+        {/* 6 What We Do Cards with Beautiful Cards */}
         <div className="text-center mb-10">
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          <h3 className="text-2xl sm:text-3xl font-black text-slate-900">
             What We Do: Complete Meta Ads Management
           </h3>
         </div>
@@ -114,11 +117,11 @@ export default function MetaAdsDeepDiveSection({
             const hasMovingBorder = idx === 0 || idx === 3;
 
             const cardContent = (
-              <div className="flex flex-col justify-between h-full rounded-[23px] bg-gradient-to-b from-white via-[#f0f7ff] to-[#e4eefb] p-7 border border-slate-900/10 shadow-lg shadow-sky-950/5">
+              <div className="flex flex-col justify-between h-full rounded-[23px] card-beautiful p-7">
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="p-3.5 rounded-2xl bg-slate-900 text-sky-400 border border-slate-800 shadow-sm group-hover:scale-110 transition-transform">
-                      <Icon className="w-5 h-5 text-sky-400" />
+                    <div className="p-3.5 rounded-2xl bg-sky-50 border border-sky-200 text-sky-600 shadow-xs">
+                      <Icon className="w-5 h-5 text-sky-600" />
                     </div>
                     <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 text-sky-300 border border-slate-800">
                       {item.tag}
@@ -128,7 +131,7 @@ export default function MetaAdsDeepDiveSection({
                   <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2.5 tracking-tight group-hover:text-sky-600 transition-colors">
                     {item.title}
                   </h4>
-                  <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -145,7 +148,7 @@ export default function MetaAdsDeepDiveSection({
             ) : (
               <div
                 key={item.title}
-                className="group relative rounded-3xl card-black-shine hover:shadow-xl hover:shadow-sky-500/15 hover:-translate-y-1 transition-all duration-300"
+                className="group relative rounded-3xl transition-all duration-300 hover:-translate-y-1"
               >
                 {cardContent}
               </div>
@@ -165,7 +168,7 @@ export default function MetaAdsDeepDiveSection({
                 onOpenBookingModal();
               }
             }}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 text-white font-bold text-base shadow-xl shadow-sky-600/30 hover:shadow-sky-600/50 hover:-translate-y-0.5 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 via-sky-600 to-blue-700 hover:from-orange-500 hover:via-amber-500 hover:to-orange-600 text-white font-bold text-base shadow-xl shadow-sky-600/25 transition-all hover:-translate-y-0.5 cursor-pointer"
           >
             <CalendarCheck className="w-5 h-5" />
             <span>Launch Quality Meta Ads for Your Practice</span>

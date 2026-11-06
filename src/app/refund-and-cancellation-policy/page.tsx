@@ -10,15 +10,15 @@ export const metadata = {
 
 export default function RefundPolicyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#eaf2fb] via-[#e4eef9] to-[#edf5fc] text-slate-900 flex flex-col">
+    <main className="min-h-screen bg-gradient-to-b from-[#dbeafe] via-[#e8f2fc] to-[#f0f7ff] text-slate-900 flex flex-col">
       <Navbar />
 
       <section className="pt-36 pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex-1">
-        <div className="rounded-3xl bg-white/95 border-2 border-sky-200/80 p-8 sm:p-12 shadow-sm">
+        <div className="rounded-3xl card-beautiful p-8 sm:p-12 shadow-md">
           <h1 className="text-3xl sm:text-5xl font-black text-slate-900 mb-4">
             Refund &amp; Cancellation Policy
           </h1>
-          <p className="text-sm text-sky-700 mb-8 font-bold">Last Updated: November 2026</p>
+          <p className="text-sm text-sky-800 mb-8 font-bold">Last Updated: November 2026</p>
 
           <div className="space-y-6 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
             <p>
@@ -43,7 +43,7 @@ export default function RefundPolicyPage() {
             <h2 className="text-xl font-bold text-slate-900 pt-4">4. Dispute Resolution &amp; Contact</h2>
             <p>
               We strive for 100% client satisfaction and clear communication. If you have any concerns regarding your service package or invoice, please contact our management team directly at{" "}
-              <a href={`mailto:${SITE_METADATA.email}`} className="text-sky-600 underline font-semibold">
+              <a href={`mailto:${SITE_METADATA.email}`} className="text-sky-700 underline font-semibold">
                 {SITE_METADATA.email}
               </a>.
             </p>
